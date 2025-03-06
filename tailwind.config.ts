@@ -22,6 +22,9 @@ const config: Config = {
           900: 'var(--brown-900)',
         },
       },
+      fontFamily: {
+        'indie-flower': ['var(--font-indie-flower)'],
+      },
     },
   },
   plugins: [],
