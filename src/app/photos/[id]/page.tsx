@@ -1,7 +1,8 @@
 import { fallbackCoffeeImages } from '@/data/pexelsImages';
 import PhotoDetailClient from './PhotoDetailClient';
 
-export default function PhotoDetailPage({ params }: { params: { id: string } }) {
+export default async function PhotoDetailPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const image = fallbackCoffeeImages.find(img => img.id === params.id);
 
   if (!image) {
