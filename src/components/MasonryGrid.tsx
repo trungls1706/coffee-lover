@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 interface ImageItem {
   id: string;
@@ -17,15 +18,17 @@ interface MasonryGridProps {
 
 export const MasonryGrid: React.FC<MasonryGridProps> = ({ images }) => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const router = useRouter();
 
   return (
     <div className="columns-1 sm:columns-2 md:columns-3 gap-4 p-4">
       {images.map((image) => (
         <div
           key={image.id}
-          className="relative mb-4 break-inside-avoid group"
+          className="relative mb-4 break-inside-avoid group cursor-pointer"
           onMouseEnter={() => setHoveredId(image.id)}
           onMouseLeave={() => setHoveredId(null)}
+          onClick={() => router.push(`/photos/${image.id}`)}
         >
           <div className="relative overflow-hidden rounded-xl">
             <Image
