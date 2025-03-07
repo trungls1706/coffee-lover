@@ -3,6 +3,14 @@ import { createClient } from 'pexels';
 // Initialize the Pexels client with API key from environment variables
 const client = createClient(process.env.NEXT_PUBLIC_PEXELS_API_KEY || '');
 
+export interface CoffeeImage {
+  id: string;
+  url: string;
+  title: string;
+  width: number;
+  height: number;
+}
+
 export interface PexelsImage {
   id: string;
   url: string;

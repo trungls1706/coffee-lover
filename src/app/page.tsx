@@ -1,4 +1,4 @@
-import { MasonryGrid } from '@/components/MasonryGrid';
+import MasonryGrid from '@/components/MasonryGrid';
 import { fallbackCoffeeImages } from '@/data/pexelsImages';
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="max-w-[2000px] mx-auto">
+      <div className="max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8">
         <MasonryGrid images={fallbackCoffeeImages} />
       </div>
     </main>
