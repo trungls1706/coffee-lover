@@ -19,7 +19,7 @@ const indieFlower = Indie_Flower({
 });
 
 export const metadata: Metadata = {
-  title: 'Coffee Lover',
+  title: 'Việt Phê',
   description: 'A collection of beautiful coffee images',
 };
 

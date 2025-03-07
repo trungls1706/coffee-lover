@@ -8,7 +8,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-4xl md:text-5xl font-indie-flower text-brown-600 tracking-wide hover:text-brown-700 transition-colors duration-200">
-              Coffee Lover
+              Việt Phê
             </h1>
             {/* <nav className="hidden md:flex space-x-8">
               <a href="#" className="text-gray-700 hover:text-brown-600">Home</a>
