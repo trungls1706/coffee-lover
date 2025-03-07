@@ -69,4 +69,4 @@ export const coffeeImages = [
     width: 800,
     height: 1200,
   },
-]; 
+];

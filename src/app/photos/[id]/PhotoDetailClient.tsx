@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
@@ -12,23 +12,34 @@ interface PhotoDetailClientProps {
   relatedImages: CoffeeImage[];
 }
 
-export default function PhotoDetailClient({ 
-  image, 
-  prevImage, 
+export default function PhotoDetailClient({
+  image,
+  prevImage,
   nextImage,
-  relatedImages 
+  relatedImages,
 }: PhotoDetailClientProps) {
   const router = useRouter();
 
   return (
     <div className="min-h-screen bg-black flex flex-col">
       {/* Close Button */}
-      <button 
+      <button
         onClick={() => router.push('/')}
         className="fixed top-6 left-6 z-50 text-white hover:text-gray-200 p-4 rounded-full bg-black hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-2xl border border-white/30 hover:border-white/60 backdrop-blur-sm group cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 transform group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-8 w-8 transform group-hover:scale-110 transition-transform"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2.5}
+            d="M6 18L18 6M6 6l12 12"
+          />
         </svg>
       </button>
 
@@ -36,12 +47,23 @@ export default function PhotoDetailClient({
       <div className="flex-1 flex">
         {/* Left Navigation */}
         {prevImage && (
-          <button 
+          <button
             className="fixed left-6 top-1/2 -translate-y-1/2 text-white hover:text-gray-200 z-40 bg-black hover:bg-gray-800 p-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl border border-white/30 hover:border-white/60 backdrop-blur-sm group cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50"
             onClick={() => router.push(`/photos/${prevImage.id}`)}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 transform group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-10 w-10 transform group-hover:scale-110 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2.5}
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
             <span className="sr-only">Previous image</span>
           </button>
@@ -102,9 +124,25 @@ export default function PhotoDetailClient({
                 <div className="border-t pt-6">
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">Location</h2>
                   <div className="flex items-start gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
                     </svg>
                     <div>
                       <h3 className="font-medium text-gray-900">Coffee House Downtown</h3>
@@ -120,8 +158,14 @@ export default function PhotoDetailClient({
                   <div className="bg-gray-50 rounded-lg p-4">
                     <div className="flex items-center gap-2 mb-3">
                       <div className="flex text-yellow-400">
-                        {[1,2,3,4,5].map((star) => (
-                          <svg key={star} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        {[1, 2, 3, 4, 5].map(star => (
+                          <svg
+                            key={star}
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                          >
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
                         ))}
@@ -129,7 +173,8 @@ export default function PhotoDetailClient({
                       <span className="text-gray-600">5.0</span>
                     </div>
                     <p className="text-gray-700">
-                      A cozy spot with amazing coffee and a peaceful atmosphere. The perfect place to work or relax. Their signature latte art is Instagram-worthy!
+                      A cozy spot with amazing coffee and a peaceful atmosphere. The perfect place
+                      to work or relax. Their signature latte art is Instagram-worthy!
                     </p>
                   </div>
                 </div>
@@ -139,20 +184,47 @@ export default function PhotoDetailClient({
                   <h2 className="text-lg font-semibold text-gray-900 mb-4">Highlights</h2>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-green-500"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
                       </svg>
                       Free Wi-Fi
                     </li>
                     <li className="flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-green-500"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
                       </svg>
                       Power Outlets Available
                     </li>
                     <li className="flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-green-500"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
                       </svg>
                       Outdoor Seating
                     </li>
@@ -163,23 +235,33 @@ export default function PhotoDetailClient({
 
             {/* Footer - Related Media */}
             <div className="border-t bg-gray-50 p-8">
-              <h2 className="text-xl font-semibold text-gray-900 mb-6">More from Coffee House Downtown</h2>
-              <MasonryGrid 
-                images={relatedImages} 
-                columns={3}
-              />
+              <h2 className="text-xl font-semibold text-gray-900 mb-6">
+                More from Coffee House Downtown
+              </h2>
+              <MasonryGrid images={relatedImages} columns={3} />
             </div>
           </div>
         </div>
 
         {/* Right Navigation */}
         {nextImage && (
-          <button 
+          <button
             className="fixed right-6 top-1/2 -translate-y-1/2 text-white hover:text-gray-200 z-40 bg-black hover:bg-gray-800 p-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl border border-white/30 hover:border-white/60 backdrop-blur-sm group cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50"
             onClick={() => router.push(`/photos/${nextImage.id}`)}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 transform group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-10 w-10 transform group-hover:scale-110 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2.5}
+                d="M9 5l7 7-7 7"
+              />
             </svg>
             <span className="sr-only">Next image</span>
           </button>
@@ -187,4 +269,4 @@ export default function PhotoDetailClient({
       </div>
     </div>
   );
-} 
+}

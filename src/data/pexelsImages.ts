@@ -23,14 +23,14 @@ export async function fetchCoffeeImages(): Promise<PexelsImage[]> {
   try {
     const query = 'coffee';
     const perPage = 10;
-    
+
     const result = await client.photos.search({
       query,
       per_page: perPage,
     });
 
     if ('photos' in result) {
-      return result.photos.map((photo) => ({
+      return result.photos.map(photo => ({
         id: photo.id.toString(),
         url: photo.src.large,
         title: photo.alt || 'Coffee Image',
@@ -117,5 +117,5 @@ export const fallbackCoffeeImages: PexelsImage[] = [
     title: 'Coffee Roasting Process',
     width: 800,
     height: 1000,
-  }
-]; 
+  },
+];

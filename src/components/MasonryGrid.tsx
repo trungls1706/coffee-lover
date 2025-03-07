@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { useState } from 'react';
 import Image from 'next/image';
@@ -15,15 +15,13 @@ export default function MasonryGrid({ images, columns = 3 }: MasonryGridProps) {
 
   // Create array of column arrays
   const columnArray = Array.from({ length: columns }, (_, i) => i);
-  const columnImages = columnArray.map((col) =>
-    images.filter((_, index) => index % columns === col)
-  );
+  const columnImages = columnArray.map(col => images.filter((_, index) => index % columns === col));
 
   return (
     <div className="flex gap-4">
       {columnImages.map((column, columnIndex) => (
         <div key={columnIndex} className="flex-1 space-y-4">
-          {column.map((image) => (
+          {column.map(image => (
             <div
               key={image.id}
               className="relative cursor-pointer group"
@@ -48,4 +46,4 @@ export default function MasonryGrid({ images, columns = 3 }: MasonryGridProps) {
       ))}
     </div>
   );
-} 
+}

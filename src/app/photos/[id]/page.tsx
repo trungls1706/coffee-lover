@@ -13,11 +13,11 @@ export default function PhotoDetailPage({ params }: { params: { id: string } }) 
   const nextImage = fallbackCoffeeImages[currentIndex + 1];
 
   return (
-    <PhotoDetailClient 
+    <PhotoDetailClient
       image={image}
       prevImage={prevImage}
       nextImage={nextImage}
       relatedImages={fallbackCoffeeImages.filter(img => img.id !== image.id).slice(0, 9)}
     />
   );
-} 
+}
