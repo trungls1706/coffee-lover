@@ -158,7 +158,7 @@ export default function PhotoDetailClient({
                   <div className="bg-gray-50 rounded-lg p-4">
                     <div className="flex items-center gap-2 mb-3">
                       <div className="flex text-yellow-400">
-                        {[1, 2, 3, 4, 5].map(star => (
+                        {[1, 2, 3, 4, 5].map((star) => (
                           <svg
                             key={star}
                             xmlns="http://www.w3.org/2000/svg"

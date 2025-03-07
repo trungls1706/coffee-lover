@@ -32,9 +32,8 @@ const eslintConfig = [
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
     },
-    plugins: {
-      prettier: 'eslint-plugin-prettier',
-    },
+    // ❌ Đã sửa `plugins` từ object thành mảng
+    plugins: ['prettier'],
   },
   {
     files: ['**/*.ts', '**/*.tsx'],

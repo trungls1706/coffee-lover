@@ -30,7 +30,7 @@ export async function fetchCoffeeImages(): Promise<PexelsImage[]> {
     });
 
     if ('photos' in result) {
-      return result.photos.map(photo => ({
+      return result.photos.map((photo) => ({
         id: photo.id.toString(),
         url: photo.src.large,
         title: photo.alt || 'Coffee Image',
